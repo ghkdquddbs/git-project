@@ -116,3 +116,5 @@
 #     hanoi_disk_move(number - 1, temp_position, destination, source)
 
 # print(hanoi_disk_move(4,1,3,2))
+
+print({1,2} in {1,2,3,{1,2}})

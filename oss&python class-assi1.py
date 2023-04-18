@@ -39,3 +39,4 @@ while True:
     
 print("제출용: "+str(nonF_value_sum)+"학점 (GPA:"+str(round(gradeXvalue_sum/nonF_value_sum,2))+")")
 print("열람용: "+str(F_value_sum+nonF_value_sum)+"학점 (GPA:"+str(round(gradeXvalue_sum/(F_value_sum+nonF_value_sum),2))+")")
+

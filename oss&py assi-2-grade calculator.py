@@ -1,5 +1,8 @@
 #과목코드&과목명 담은 사전
-class_code_name_archive={'12345':"오픈소스와 파이썬 프로그래밍", '12346':"미적분학1", '12347':"일반물리학1", '12348':"글쓰기", '12349':"창의적 설계", '12350': "일반물리실험", '12351': "Communication in english", '12352': "기초 컴퓨터 프로그래밍"}
+class_code_name_archive={'12345':"오픈소스와 파이썬 프로그래밍", '12346':"미적분학1", 
+                         '12347':"일반물리학1", '12348':"글쓰기", '12349':"창의적 설계", 
+                         '12350': "일반물리실험", '12351': "Communication in english", 
+                         '12352': "기초 컴퓨터 프로그래밍"}
 
 #정보단위들이 모인 리스트
 lst=[]
@@ -107,9 +110,9 @@ while True:
             
             else:
                 submit_credit+=int(block[1])
-                submit_gpa+=get_gpa_score(block[2])
+                submit_gpa+=get_gpa_score(block[2])*int(block[1])
                 archive_credit+=int(block[1])
-                archive_gpa+=get_gpa_score(block[2])
+                archive_gpa+=get_gpa_score(block[2])*int(block[1])
         submit_gpa/=submit_credit
         archive_gpa/=archive_credit
         calculation_process(submit_credit, archive_credit, submit_gpa, archive_gpa)

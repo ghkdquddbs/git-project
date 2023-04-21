@@ -117,4 +117,65 @@
 
 # print(hanoi_disk_move(4,1,3,2))
 
-print({1,2} in {1,2,3,{1,2}})
+
+# #행렬 전치 문제
+# #입력
+# row_num, col_num=map(int, input().split())
+# origin_structure=[]
+# new_lst=[[] for i in range(col_num)]
+# for row in range(row_num):
+#     col=list(map(int, input().split()))
+#     origin_structure.append(col)
+# #행렬 전치
+# for i in range(col_num):
+#     for j in range(row_num):
+#         new_lst[i].append(origin_structure[j][i])
+# #출력
+# for i in range(col_num):
+#     for j in range(row_num):
+#         print(new_lst[i][j], end=' ')
+#     print()
+    
+# #로또 추첨 문제
+# import random
+# target=set()
+# while len(target)>=6:
+#     x=random.randint(1,45)
+#     target.add(x)
+# print("1부터 45까지의 자연수를 간격을 두어 중복없이 6개 입력하시오.")
+# user_input=set(map(int, input().split()))
+# n=len(target & user_input)
+# print(str(n)+"개의 숫자가 일치합니다.")
+
+# #중복찾기 문제
+# limit=int(input("허용 중복수를 입력하세요: "))
+# num_duplicate_value={}
+# while True:
+#     x=input("값을 입력하세요: ")
+#     if x=='.':
+#         break
+#     if x not in num_duplicate_value:
+#         num_duplicate_value[x]=1
+#     else:
+#         num_duplicate_value[x]+=1
+
+# for k,v in num_duplicate_value.items():
+#     if v>1:
+#         print(k, end=' ')
+
+#단어 찾기 문제
+user_input=input('문자열을 입력하세요: ')
+word_num={}
+while True:
+    x=input('단어를 입력하세요: ')
+    if x=='.':
+        break
+    if x in user_input:
+        if x not in word_num:
+            word_num[x]=1
+        else:
+            word_num[x]+=1
+    else:
+        word_num[x]=0
+for k, v in word_num.items():
+    print(str(k)+': '+str(v))

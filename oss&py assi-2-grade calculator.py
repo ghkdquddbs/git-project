@@ -99,19 +99,19 @@ while True:
             print('['+str(class_code_name_archive.get(str(block[0])))+']'+str(block[1])+'학점: '+str(block[2]))
     
     elif user_input == '3':
-        F_cnt=0
+        
         for block in lst:
             if block[2]=='F':
                 archive_credit+=int(block[1])
-                F_cnt+=1
+                
             
             else:
                 submit_credit+=int(block[1])
                 submit_gpa+=get_gpa_score(block[2])
                 archive_credit+=int(block[1])
                 archive_gpa+=get_gpa_score(block[2])
-        submit_gpa/=(len(lst)-F_cnt)
-        archive_gpa/=len(lst)
+        submit_gpa/=submit_credit
+        archive_gpa/=archive_credit
         calculation_process(submit_credit, archive_credit, submit_gpa, archive_gpa)
         break
         

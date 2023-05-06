@@ -47,12 +47,15 @@ class CourseHistory:
             return new_id
 
         else:
-            return self.course_id_map[course_name] #(내가 이해한 바로는) self.course_id_map[course_name]은 기본실행함수__init__산하의 변수 self.course_id_map를 이용하기 위한 표현이다.
+            return self.course_id_map[course_name] #(내가 이해한 바로는) self.course_id_map[course_name]은 기본실행함수__init__산하의 변수 self.course_id_map를 
+                                                   #이용하기 위한 표현이다.
         
     # 입력 함수
     def input_process(self):
         course_name = input('과목명을 입력하세요: ')
-        course_id = self.allocate_course_id(course_name) #(내가 이해한 바로는) 인스턴스=x로 설정하자. 클래스를 계승한 인스턴스에서 allocate_course_id함수를 이용하려면 x.allocate_course_id(course_name)와 같이 이용해야 할테지만, 클래스를 계승할 인스턴스가 이용할수 있다는 표식을 남겨주기 위해서는 self.allocate_course_id(course_name)와 같이 작성한다.
+        course_id = self.allocate_course_id(course_name) #(내가 이해한 바로는) 인스턴스=x로 설정하자. 클래스를 계승한 인스턴스에서 allocate_course_id함수를 이용하려면
+                                                         #x.allocate_course_id(course_name)와 같이 이용해야 할테지만, 클래스를 계승할 인스턴스가 이용할수 있다는 
+                                                         #표식을 남겨주기 위해서는 self.allocate_course_id(course_name)와 같이 작성한다.
 
         credit = input('학점을 입력하세요: ')
         credit = int(credit)

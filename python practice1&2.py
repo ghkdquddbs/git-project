@@ -163,19 +163,19 @@
 #     if v>1:
 #         print(k, end=' ')
 
-#단어 찾기 문제
-user_input=input('문자열을 입력하세요: ')
-word_num={}
-while True:
-    x=input('단어를 입력하세요: ')
-    if x=='.':
-        break
-    if x in user_input:
-        if x not in word_num:
-            word_num[x]=1
-        else:
-            word_num[x]+=1
-    else:
-        word_num[x]=0
-for k, v in word_num.items():
-    print(str(k)+': '+str(v))
+# #단어 찾기 문제
+# user_input=input('문자열을 입력하세요: ')
+# word_num={}
+# while True:
+#     x=input('단어를 입력하세요: ')
+#     if x=='.':
+#         break
+#     if x in user_input:
+#         if x not in word_num:
+#             word_num[x]=1
+#         else:
+#             word_num[x]+=1
+#     else:
+#         word_num[x]=0
+# for k, v in word_num.items():
+#     print(str(k)+': '+str(v))

@@ -151,17 +151,29 @@ while True:
     
     # 입력값별 작업
     if user_input == '1':
-        course_history.input_process() #인스턴스인 course_history가 클래스를 계승했기 때문에 클래스안에 포함된 함수들 역시 이용가능
-        
+        try:
+            course_history.input_process() #인스턴스인 course_history가 클래스를 계승했기 때문에 클래스안에 포함된 함수들 역시 이용가능
+        except Exception as exception:
+            print('잘못된 값이 입력되었습니다.')
+            print('[', type(exception).__name__, ']', str(exception))
     elif user_input == '2':
-        course_history.print_process()
-        
+        try:
+            course_history.print_process()
+        except Exception as exception:   #올바르게 입력된다면 그 이후에 에러가 발생하지는 않는다. 조회과정에서 존재하지 않는 과목코드를 입력할 가능성은 존재하지만 메서드내에서 조치해두었다. 다만 혹시 모를 가능성에 예외처리로 대비하는것
+            print('잘못된 값이 출력되었습니다.')
+            print('[', type(exception).__name__, ']', str(exception))
     elif user_input == '3':
-        course_history.query_process()
-
+        try:
+            course_history.query_process()
+        except Exception as exception:
+            print('조회과정에서 아래와 같은 오류가 발생했습니다.')
+            print('[', type(exception).__name__, ']', str(exception))
     elif user_input == '4':
-        course_history.calculate_process()
-        
+        try:
+            course_history.calculate_process()
+        except Exception as exception:
+            print('계산과정에서 아래와 같은 오류가 발생했습니다.')
+            print('[', type(exception).__name__, ']', str(exception))
     elif user_input == '5':
         break
 
